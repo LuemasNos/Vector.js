@@ -44,6 +44,28 @@ function Vector(x,y,z){
     return this.x*v.x+this.y*v.y+this.z*v.z
     
   }
+  this.mult=function(s){
+    this.x=this.x*s;
+        this.y=this.y*s;
+    this.z=this.z*s;
+
+  }
+  this.multS=function(s){
+    return new Vector(this.x*s,this.y*s, this.z*s);
+  }
+  this.div=function(s){
+    this.x=this.x/s;
+        this.y=this.y/s;
+    this.z=this.z/s;
+
+  }
+  this.divS=function(s){
+    return new Vector(this.x/s,this.y/s, this.z/s);
+  }
+  this.cross=function(v){
+    
+  }
+  
 
  }
 
@@ -64,10 +86,13 @@ function Vector(x,y,z){
 
 
   }
-  this.translateVector2D=function(v){
-    let a=this.rowVector.x*v.x+this.rowVector.y*v.y;
-    let b=this.rowVector2.x*v.x+this.rowVector2.y*v.y;
-    return new Vector(a,b);
+    
+  this.translateVector=function(v){
+    let a=this.rowVector.x*v.x+this.rowVector.y*v.y+this.rowVector.z*v.z;
+    let b=this.rowVector2.x*v.x+this.rowVector2.y*v.y+this.rowVector2.z*v.z;
+    let c=this.rowVector3.x*v.x+this.rowVector3.y*v.y+this.rowVector3.z*v.z;
+
+    return new Vector(a,b,c);
   }
 
   
