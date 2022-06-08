@@ -65,6 +65,10 @@ function Vector(x,y,z){
   this.cross=function(v){
     
   }
+  this.angleBetween=function(v){
+    let a=this.mag()*v.mag();
+    return Math.acos(a);
+  }
   
 
  }
